@@ -1,0 +1,53 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Customer Registration{% endblock title %}
+{% block main-content %}
+<div class="container">
+    <div class="row my-3">
+        <div class="col-sm-6 offset-sm-3">
+            <h3>Customer Registration</h3>
+            <hr>
+
+            <form action="" method="post" novalidate class="shadow p-5">
+                {% if messages %}
+                    {% for message in messages %}
+                        <p {%if message.tags %} class ='alert alert-{{message.tags}} mb-5'{%endif%}>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+                {% csrf_token %}
+                {% for f in form %}
+                    <div>
+                        {{f.label_tag}} {{f}} <small class='text-danger'>{{f.errors|striptags}}</small>
+                    </div>
+                {% endfor %}
+                <input type='submit' value='Submit' class='btn btn-primary'>
+                <br>
+                <div class="text-center text-primary fw-bold">
+                    <small>Existing User ? <a href="{% url 'login' %}" class="text-danger">Login Now</a> </small>
+                </div>
+                {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                        <p class="alert alert-danger my-3">{{error}}</p>
+                    {% endfor %}
+                {% endif %}
+            </form>
+
+            <!-- Password Strength Meter -->
+            <div id="password-strength-meter" class="mt-3">
+                <!-- Password strength meter UI will be displayed here -->
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="mt-3">
+                <input type="checkbox" id="agree-terms" name="agree-terms">
+                <label for="agree-terms">I agree to the <a href="#">terms and conditions</a>.</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom JavaScript for Password Strength Meter -->
+<script>
+    // Your custom JavaScript code for password strength meter goes here
+</script>
+{% endblock main-content %}
