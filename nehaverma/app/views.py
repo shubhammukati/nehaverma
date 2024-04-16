@@ -57,6 +57,9 @@ def show_cart(request):
 def buy_now(request):
  return render(request, 'app/buynow.html')
 
+def contact(request):
+  return render(request,'app/contact.html')
+
 def plus_cart(request):
   if request.method=='GET':
     prod_id = request.GET['prod_id']
@@ -164,6 +167,9 @@ def lehanga(request,data=None):
  else:
   saris=Product.objects.filter(category='L')
  return render(request, 'app/cape.html',{'saris':saris})
+
+def about(request):
+  return render(request,'app/about.html')
 
 def cape(request,data=None):
  if data == None:

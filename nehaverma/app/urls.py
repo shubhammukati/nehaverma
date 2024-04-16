@@ -34,4 +34,6 @@ urlpatterns = [
     path('passwordchangedone/',auth_view.PasswordChangeView.as_view(template_name='app/passwordchangedone.html'),name='passwordchangedone'),
     path('checkout/', views.checkout, name='checkout'),
     path('paymentdone/', views.payment_done, name='paymentdone'),
+    path('about/',views.about,name='about'),
+    path('contact/',views.contact,name='contact'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

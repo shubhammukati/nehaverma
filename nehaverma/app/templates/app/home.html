@@ -1,3 +1,12 @@
+<head>
+  <style>
+    .item img {
+      width: auto;
+      height: 400px; /* Adjust the height as needed */
+      object-fit: cover; /* Ensure the image maintains its aspect ratio and covers the container */
+    }
+  </style>
+</head>
 {% extends 'app/base.html' %}
 {% load static %}
 {% block title %}Home{% endblock title %}
@@ -55,7 +64,7 @@
   <a href="{% url 'product-detail' saree.id %}" class="btn">
   <div class="item">
     <img src="{{saree.product_image.url}}" alt="" height="200px">
-    <span class="fw-bold" style="font-family: 'Courier New', Courier, monospace;">{{saree.title}}</span><br>
+    <span class="fw-bold" style="font-family: 'Poppins', sans-serif;">{{saree.title}}</span><br>
     <span class="fs-5">Rs. {{saree.discounted_price}}</span>
   </div>
   </a>
@@ -112,11 +121,11 @@
  <h2 style='font-family: Impact, sans-serif;'>Neha Verma Lehanga Collection</h2>
  <!-- Slider 2 -->
  <div class="owl-carousel" id="slider2">
-  {% for lehanga in lehangas  %}
+  {% for lehanga in lehangas|slice:":3"  %}
   <a href="{% url 'product-detail' lehanga.id %}" class="btn">
   <div class="item">
     <img src="{{lehanga.product_image.url}}" alt="" height="200px">
-    <span class="fw-bold" style="font-family: 'Courier New', Courier, monospace;">{{lehanga.title}}</span><br>
+    <span class="fw-bold" style="font-family: 'Poppins', sans-serif;">{{lehanga.title}}</span><br>
     <span class="fs-5">Rs. {{lehanga.discounted_price}}</span>
   </div>
   </a>
@@ -124,6 +133,14 @@
  </div>
 </div>
 <!-- End 2nd Product Slider -->
+
+<div class="container my-1">
+  <div class="row">
+    <div class="col">
+      <img src="{% static 'app/images/payavail/new.jpg' %}" alt="" class="img-fluid d-block mx-auto">
+    </div>
+  </div>
+</div>
 
 <div class="m-3 text-center">
   <h2 style='font-family: Impact, sans-serif;'>Neha Verma Gharara Collection</h2>
@@ -133,7 +150,7 @@
    <a href="{% url 'product-detail' gharara.id %}" class="btn">
    <div class="item">
      <img src="{{gharara.product_image.url}}" alt="" height="200px">
-     <span class="fw-bold" style="font-family: 'Courier New', Courier, monospace;">{{gharara.title}}</span><br>
+     <span class="fw-bold" style="font-family: 'Poppins', sans-serif;">{{gharara.title}}</span><br>
      <span class="fs-5">Rs. {{gharara.discounted_price}}</span>
    </div>
    </a>

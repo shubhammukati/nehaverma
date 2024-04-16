@@ -1,0 +1,64 @@
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .partner-info {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        .partner-info h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+{% extends "app/base.html" %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block main-content %}
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>For any inquiries or collaborations, please reach out to us:</p>
+        
+        <div class="partner-info">
+            <h2>Clothing Brand Partners</h2>
+            <p>If you're interested in becoming a clothing brand partner or collaborating with us, please contact:</p>
+            <ul>
+                <li>Name: Neha Verma</li>
+                <li>Email: owner@nehaverma.com</li>
+                <li>Phone: **********</li>
+            </ul>
+        </div>
+        
+        <div class="partner-info">
+            <h2>Other Inquiries</h2>
+            <p>For general inquiries, feedback, or support, please contact:</p>
+            <ul>
+                <li>Name: Payal Verma</li>
+                <li>Email: co@nehaverma.com</li>
+                <li>Phone: **********</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
